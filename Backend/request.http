@@ -1,0 +1,110 @@
+//login
+POST http://localhost:3004/users/login
+Content-Type: application/json
+
+{
+     "email":"jyothika@gmail.com",
+    "password":"jyo123"
+}
+"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6Imp5b3RoaWthQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoianlvMTIzIn0sImlhdCI6MTY1NDA2MDM3NywiZXhwIjoxNjU0MDYxNTc3fQ.JbVG1_rl41LIYqKb81UP9sWXG3zbUuc1XCriYAHZsZE",
+//new user
+
+POST  http://localhost:3004/users/signup
+Content-Type: application/json
+
+{
+    "name":"anjali",
+    "age":21,
+    "mobile":"9494644363",
+    "email":"anjali@westagilelabs.com",
+    "password":"anju123"
+}
+
+
+//get all users
+GET http://localhost:3004/users
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6Imp5b3RoaWthQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoianlvMTIzIn0sImlhdCI6MTY1NDA2MjEzMH0.qs7dXzl-496Yz68JMgCKV9GzwOowR77V7IfNxAHZxKA
+
+//Get all user by given id
+GET http://localhost:3004/users/1
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6Imp5b3RoaWthQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoianlvMTIzIn0sImlhdCI6MTY1NDA2MjEzMH0.qs7dXzl-496Yz68JMgCKV9GzwOowR77V7IfNxAHZxKA
+
+
+//Get all dairies
+GET http://localhost:3004/usersdairy
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6Imp5b3RoaWthQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoianlvMTIzIn0sImlhdCI6MTY1NDA2MjEzMH0.qs7dXzl-496Yz68JMgCKV9GzwOowR77V7IfNxAHZxKA
+
+//new note
+POST http://localhost:3004/usersdairy/1
+Content-Type:application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6Imp5b3RoaWthQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoianlvMTIzIn0sImlhdCI6MTY1NDA2MjEzMH0.qs7dXzl-496Yz68JMgCKV9GzwOowR77V7IfNxAHZxKA
+
+{
+    "user_id":1,
+    "note":" I am  happy",
+    "date":"2022-06-12"
+}  
+
+//Update note
+PUT  http://localhost:3004/usersdairy/33
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6Imp5b3RoaWthQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoianlvMTIzIn0sImlhdCI6MTY1NDA2MjEzMH0.qs7dXzl-496Yz68JMgCKV9GzwOowR77V7IfNxAHZxKA
+
+{   
+    "user_id": 1,
+    "note": "jyothika e" ,
+    "date":"2022-06-12"
+}
+
+//Delete note
+DELETE http://localhost:3004/usersdairy/2
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6Imp5b3RoaWthQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoianlvMTIzIn0sImlhdCI6MTY1NDA2MjEzMH0.qs7dXzl-496Yz68JMgCKV9GzwOowR77V7IfNxAHZxKA
+
+//view note by given id
+
+GET http://localhost:3004/usersdairy/3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6Imp5b3RoaWthQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoianlvMTIzIn0sImlhdCI6MTY1NDA2MjEzMH0.qs7dXzl-496Yz68JMgCKV9GzwOowR77V7IfNxAHZxKA
+
+//view note by given date 2022-06-06
+
+GET http://localhost:3004/usersdairy/1/2022-06-08
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6Imp5b3RoaWthQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoianlvMTIzIn0sImlhdCI6MTY1NDA2MjEzMH0.qs7dXzl-496Yz68JMgCKV9GzwOowR77V7IfNxAHZxKA
+
+//Get all credentials
+GET http://localhost:3004/usercredentials
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6Imp5b3RoaWthQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoianlvMTIzIn0sImlhdCI6MTY1NDA2MjEzMH0.qs7dXzl-496Yz68JMgCKV9GzwOowR77V7IfNxAHZxKA
+
+//Get credentials by given userId
+GET http://localhost:3004/usercredentials/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6Imp5b3RoaWthQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoianlvMTIzIn0sImlhdCI6MTY1NDA2MjEzMH0.qs7dXzl-496Yz68JMgCKV9GzwOowR77V7IfNxAHZxKA
+
+//Add credentials
+
+POST http://localhost:3004/usercredentials/4
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6Imp5b3RoaWthQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoianlvMTIzIn0sImlhdCI6MTY1NDA2MjEzMH0.qs7dXzl-496Yz68JMgCKV9GzwOowR77V7IfNxAHZxKA
+
+{   
+    "user_id":4,
+    "platform": "flipkart",
+    "email": "jyo@gmail.com",
+    "password":"rjyothi12345"
+}
+//Update credentials
+
+PUT  http://localhost:3004/usercredentials/3
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6Imp5b3RoaWthQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoianlvMTIzIn0sImlhdCI6MTY1NDA2MjEzMH0.qs7dXzl-496Yz68JMgCKV9GzwOowR77V7IfNxAHZxKA
+
+{   
+    
+    "platform": "flipkart",
+    "email": "anjali@gmail.com",
+    "password":"anjali123"
+}
+
+//Delete credentials
+
+DELETE  http://localhost:3004/usercredentials/3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRGV0YWlscyI6eyJlbWFpbCI6Imp5b3RoaWthQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoianlvMTIzIn0sImlhdCI6MTY1NDA2MjEzMH0.qs7dXzl-496Yz68JMgCKV9GzwOowR77V7IfNxAHZxKA
+
